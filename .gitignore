@@ -1,0 +1,49 @@
+# Ignore environment files
+.env
+.env.*
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore logs and temporary files
+*.log
+logs/
+tmp/
+
+# Ignore compiled and dependency directories
+venv/
+.env/
+node_modules/
+
+# Ignore database files
+*.sqlite3
+db.sqlite3
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore Docker-related files
+docker-compose.override.yml
+
+# Ignore build and runtime artifacts
+dist/
+build/
+*.tar
+*.zip
+*.gz
+
+# Ignore coverage and test artifacts
+coverage/
+*.coverage
+nosetests.xml
+junit.xml
+htmlcov/
+
+# Ignore generated migrations (optional, keep if versioning)
+migrations/

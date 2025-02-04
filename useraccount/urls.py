@@ -1,4 +1,6 @@
 from django.urls import path
+
+# Importing necessary views to handle the registration, login and logout
 from dj_rest_auth.jwt_auth import get_refresh_view
 from dj_rest_auth.registration.views import RegisterView
 from dj_rest_auth.views import LoginView, LogoutView, UserDetailsView

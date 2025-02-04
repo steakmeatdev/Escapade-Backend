@@ -2,24 +2,34 @@ version: "3.8"
 
 services:
   web:
+    # build from the local Dockerfile
     build: .
+    # executin the following command after container starts
     command: python manage.py runserver 0.0.0.0:8000
+    # Mapping port 8000 of the host to 8000
     ports:
       - "8000:8000"
+    # binds the current project directory (.) to /app inside the container to update any changes
     volumes:
-      - .:/app # Mount backend folder to /app inside the container
+      - .:/app
     environment:
       - PYTHONDONTWRITEBYTECODE=1
       - PYTHONBUFFERED=1
+    # loading sensitive environment variables from the .env.dev file
     env_file:
-      - ./.env.dev # Load environment variables
+      - ./.env.dev
+
+    # Waiting for the db container to start
     depends_on:
       - db
 
   db:
+    # download image first then build it
     image: postgres:15
+    # Specifying the volumes the container will use
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+    # Env variables
     environment:
       - POSTGRES_USER=postgresuser
       - POSTGRES_PASSWORD=postgrespassword

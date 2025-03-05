@@ -29,7 +29,7 @@ SIMPLE_JWT = {
     "BLACKLIST_AFTER_ROTATION": False,
     "UPDATE_LAST_LOGIN": True,
     "SIGNING_KEY": "acomplexkey",
-    "ALOGRIGTHM": "HS512",
+    "ALGORITHM": "HS512",
 }
 
 
@@ -51,7 +51,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     # Local server backend
     "http://127.0.0.1:8000",
-    # Local server frontend
+    # front end server domain
     "http://127.0.0.1:3000",
 ]
 

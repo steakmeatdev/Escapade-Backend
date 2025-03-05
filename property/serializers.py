@@ -1,17 +1,12 @@
 from rest_framework import serializers
-from useraccount.serialzers import UserDetailSerializer
+from useraccount.serializers import UserDetailSerializer
 from .models import Property, Reservation
 
 
 class PropertiesListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Property
-        fields = (
-            "id",
-            "title",
-            "price_per_night",
-            "image_url",
-        )
+        fields = ("id", "title", "price_per_night", "image_url")
 
 
 class PropertiesDetailSerializer(serializers.ModelSerializer):

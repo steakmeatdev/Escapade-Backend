@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Property
+from .models import Property, Reservation
 
 
 class PropertyForm(ModelForm):
@@ -17,3 +17,15 @@ class PropertyForm(ModelForm):
             "category",
             "image",
         )
+
+
+class ReservationForm(ModelForm):
+    class Meta:
+        model = Reservation
+        fields = [
+            "guests",
+            "start_date",
+            "end_date",
+            "number_of_nights",
+            "total_price",
+        ]

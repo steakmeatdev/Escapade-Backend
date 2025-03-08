@@ -48,6 +48,9 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
 }
 
+# Allow credentials (cookies) with cross-origin requests
+# CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOWED_ORIGINS = [
     # Local server backend
     "http://127.0.0.1:8000",
@@ -69,7 +72,10 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 REST_AUTH = {"USE_JWT": True, "JWT_AUTH_HTTPONLY": False}
 
+CHANNEL_LAYERS = {"default": {"BACKEND": "channels.layers.inMemoryChannelLayer"}}
+
 INSTALLED_APPS = [
+    "daphne",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -86,6 +92,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "useraccount",
     "property",
+    "chat",
 ]
 
 MIDDLEWARE = [
@@ -118,6 +125,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "escapadebackend.wsgi.application"
+ASGI_APPLICATION = "escapadebackend.asgi.application"
 
 
 # Database
